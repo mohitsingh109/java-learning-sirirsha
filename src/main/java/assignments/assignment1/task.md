@@ -15,7 +15,10 @@
     - Implement the tasks within the `main` method of another class named `BookTest`.
 
 ## Scenario:
-You are tasked with developing a Java class to represent a book. The class should have instance variables to store the book's details, provide getter and setter methods to access and modify these details, include methods with different access modifiers, and have a method to print the book's information.
+You are tasked with developing a Java class to represent a book. 
+The class should have instance variables to store the book's details, 
+provide getter and setter methods to access and modify these details, 
+include methods with different access modifiers, and have a method to print the book's information.
 
 ### Tasks:
 
