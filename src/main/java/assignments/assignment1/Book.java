@@ -1,4 +1,4 @@
-package com.javalearning;
+package assignments.assignment1;
 
 public class Book {
     private String title;

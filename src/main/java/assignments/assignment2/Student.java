@@ -1,18 +1,18 @@
-package com.javalearning;
+package assignments.assignment2;
 
 public class Student {
 
     private String name;
-            private int age;
-            private String studentID;
-            private double gpa;
+    private int age;
+    private String studentID;
+    private double gpa;
 
-            public static int totalStudents=0;
-    public static Double totalGPA=0.0;
+    public static int totalStudents = 0;
+    public static Double totalGPA = 0.0;
 
     public Student() {
-       totalStudents++;
-        totalGPA+=getGpa();
+        totalStudents++;
+        totalGPA += getGpa();
     }
 
     public Student(String name, int age, String studentID, double gpa) {
@@ -21,14 +21,14 @@ public class Student {
         this.studentID = studentID;
         this.gpa = gpa;
         totalStudents++;
-        totalGPA+=getGpa();
+        totalGPA += getGpa();
 
     }
 
     public Student(String name, int age, String studentID) {
-        this(name,age,studentID,70.5);
+        this(name, age, studentID, 70.5);
         totalStudents++;
-        totalGPA+=getGpa();
+        totalGPA += getGpa();
     }
 
     public String getName() {
@@ -63,25 +63,22 @@ public class Student {
         this.gpa = gpa;
     }
 
-    public boolean isHonorRoll()
-    {
-        if(getGpa()>=3.5)
+    public boolean isHonorRoll() {
+        if (getGpa() >= 3.5)
             return true;
         else
             return false;
     }
 
-    public void printDetails()
-    {
-        System.out.println("name : "+getName());
-        System.out.println("age : "+getAge());
-        System.out.println("Student ID : "+getStudentID());
-        System.out.println("GPA : "+getGpa());
+    public void printDetails() {
+        System.out.println("name : " + getName());
+        System.out.println("age : " + getAge());
+        System.out.println("Student ID : " + getStudentID());
+        System.out.println("GPA : " + getGpa());
     }
 
-    public static Double getAverageGPA()
-    {
-        return totalGPA/totalStudents;
+    public static Double getAverageGPA() {
+        return totalGPA / totalStudents;
     }
 
 }

@@ -1,4 +1,6 @@
-package com.javalearning;
+package assignments.assignment1;
+
+import assignments.assignment1.Book;
 
 public class BookTest {
 

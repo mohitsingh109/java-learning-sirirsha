@@ -1,4 +1,6 @@
-package com.javalearning;
+package assignments.assignment2;
+
+import assignments.assignment2.Student;
 
 public class StudentTest {
     public static void main(String[] args) {
@@ -14,7 +16,6 @@ public class StudentTest {
 
         System.out.println("total students : " + Student.totalStudents);
         System.out.println("average GPA : " + Student.getAverageGPA());
-
 
     }
 
