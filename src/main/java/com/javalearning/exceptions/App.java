@@ -11,11 +11,13 @@ public class App {
         // Checked Exception force  [Exception class]
 
         try {
-            checkedException();
+            checkedException(); // login s1
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            // login s2
             System.out.println("handle checked exception");
         }
+
 
         String name = "sdkhfskf";
 
@@ -31,6 +33,15 @@ public class App {
         } catch (CustomCheckedException e) {
             System.out.println("User is already exist");
             System.out.println(e.getMessage());
+        }
+
+        try {
+            int result = 10 / 0;
+
+        } catch (ArithmeticException ae) {
+            System.out.println("dived by 0 not allowed");
+        } finally {
+            System.out.println("release database resources");
         }
 
         throw new CustomUnCheckedException("m");
