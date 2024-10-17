@@ -1,0 +1,27 @@
+Two Ways to create Thread
+
+1) Extend the Thread class
+2) Implementing Runnable interface
+
+1) Object Level Locking
+    (Synchronized Method), (Synchronized block)
+
+2) Class Level Locking
+    (Synchronized Class Function), (Synchronized block)
+
+Thread Communication:
+wait(), notify(), notifyAll()
+
+wait() --> waiting for a resource
+notify() --> notify only one thread
+notifyAll() --> notify all the thread
+
+
+Thread Lifecycle
+1) New: Thread created but not started
+2) Runnable: Thread is ready to run and waiting for CPU to schedule it
+3) Running: thread is running
+4) Blocked: {Code, I/O, Lock, ..} When thread is waiting for a resource
+5) Terminated: Thread finish it's work, CPU Inteput, Code Terminated
+
+---Executure Service

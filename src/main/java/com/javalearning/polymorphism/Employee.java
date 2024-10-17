@@ -6,10 +6,19 @@ public class Employee {
 
     private double salary;
 
+
+
+    private static int totalEmployee = 0;
+
     public Employee(String name, double salary) {
         this.name = name;
         this.salary = salary;
     }
+
+    public Employee() {
+    }
+
+
 
     public String getName() {
         return name;

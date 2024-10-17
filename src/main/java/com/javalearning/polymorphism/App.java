@@ -1,5 +1,8 @@
 package com.javalearning.polymorphism;
 
+import java.util.Date;
+import java.util.Random;
+
 public class App {
 
     public static void main(String[] args) {
@@ -19,6 +22,13 @@ public class App {
         }
         printDetails(javaDeveloper);
         printDetails(manager);
+
+        Employee employee = new Employee("Mohit", 45.655);
+        employee.setSalary(5654.45645);
+
+        Date date = new Date();
+        System.out.println(date);
+
     }
 
     private static void printDetails(Employee e) { // e?
