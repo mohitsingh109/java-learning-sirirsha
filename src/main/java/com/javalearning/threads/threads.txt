@@ -16,6 +16,18 @@ wait() --> waiting for a resource
 notify() --> notify only one thread
 notifyAll() --> notify all the thread
 
+Thread Deadlock
+
+Reentrant Locks
+
+Thread Priority [1 to 10] Min: 1 Max: 10
+
+ExecutorService
+1. Fixed Thread Pool
+2. Cached Thread Pool
+3. Single Thread
+4. Scheduled Thread Pool [ automated reporting, retry sms, email]
+5. Work Stealing Pool [Interview] [Save creating new thread you can use it to run task in parallel that don't have much high priority]
 
 Thread Lifecycle
 1) New: Thread created but not started
@@ -23,5 +35,3 @@ Thread Lifecycle
 3) Running: thread is running
 4) Blocked: {Code, I/O, Lock, ..} When thread is waiting for a resource
 5) Terminated: Thread finish it's work, CPU Inteput, Code Terminated
-
----Executure Service

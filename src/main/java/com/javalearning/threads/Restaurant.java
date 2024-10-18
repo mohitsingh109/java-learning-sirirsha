@@ -26,6 +26,19 @@ public class Restaurant {
         }
     }
 
+    public void cook2(String chefName) { // Thread safe function
+        System.out.println("Access Fridge2");
+        System.out.println("Access Vegetables & Tools2");
+        synchronized (this) { // synchronized block
+            try {
+                System.out.println(Thread.currentThread().getName() + " " + chefName + " is cooking");
+                Thread.sleep(5000); // Putting thread in block state for 5 sec
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
     // Class Level Locking
     public synchronized static void serve(Thread chef, String serveName) {
         try {
