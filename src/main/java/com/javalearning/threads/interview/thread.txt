@@ -1,0 +1,11 @@
+1) What are race conditions in multithreading, a
+2) Explain Callable & Future?
+3) difference between shutdown() & shutdownNow()
+4) What happen if an exception is thrown in a thread pool? How can you handle it?
+5) How to ensure that a piece of code runs only by one thread at time?
+6) What is difference between submit() & execute()
+7) How can you avoid deadlock in java? -- Need to check
+8) AtomicInteger
+9) You need to implement a bank transfer system where two account can transfer money
+between each other. The solution should handle concurrency, ensuring no data corruption
+or deadlock occur when multiple thread try to transfer money simultaneously
