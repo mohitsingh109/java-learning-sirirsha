@@ -9,3 +9,22 @@
 9) You need to implement a bank transfer system where two account can transfer money
 between each other. The solution should handle concurrency, ensuring no data corruption
 or deadlock occur when multiple thread try to transfer money simultaneously
+
+10) Inventory Management System (Multiple Users Updating Inventory)
+    You are tasked with building an inventory management system where
+    multiple users can simultaneously update the stock of items. For example,
+    users can place orders, and the stock should decrease accordingly.
+    Implement a solution that ensures no over-selling or inconsistent inventory state,
+    even with multiple threads accessing and updating the stock simultaneously.
+
+11) Restaurant Reservation System (Avoiding Overbooking)
+    Implement a restaurant reservation system where multiple customers are booking tables simultaneously.
+    The system should ensure that no more than the available number of tables can be booked,
+    and it should avoid overbooking when multiple users try to reserve tables at the same time.
+
+12) Online Shopping Cart System (Simultaneous Additions and Removals)
+    Design an online shopping cart system where multiple users can add or remove
+    items from the cart at the same time. Ensure that no item is added
+    more times than the available stock and that the cart state remains consistent
+    despite concurrent modifications.
+
