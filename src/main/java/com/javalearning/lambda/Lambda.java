@@ -12,7 +12,7 @@ public class Lambda {
             }
         };
 
-        Runnable runnable1 = () ->  System.out.println("Running in thread");
+        Runnable runnable1 = () -> System.out.println("Running in thread");
 
         Runnable runnable2 = () ->  {
             System.out.println("Running in thread");

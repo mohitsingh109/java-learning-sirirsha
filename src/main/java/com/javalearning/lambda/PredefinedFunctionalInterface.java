@@ -4,9 +4,13 @@ import com.javalearning.inheritance.Person;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class PredefinedFunctionalInterface {
     public static void main(String[] args) {
@@ -35,7 +39,25 @@ public class PredefinedFunctionalInterface {
             System.out.println(c);
         };
 
-        List<String> name = Arrays.asList("Mohit", "Karan", "LL");
 
+        Predicate<String> isEmailValid = email -> email.contains("@");
+        System.out.println(isEmailValid.test("test@gmail.com"));
+
+
+        Function<Double, Double> applyDiscount = price -> price * 0.9;
+        System.out.println(applyDiscount.apply(100.10));
+
+        Supplier<List<String>> top10User = () -> Arrays.asList("Mohit", "Karan");
+        Supplier<String> randomId = () -> UUID.randomUUID().toString();
+
+        System.out.println(top10User.get());
+        System.out.println(randomId.get());
+
+        Consumer<String> logger = msg -> System.out.println("Log: " + msg);
+
+
+        // BiFunction - similar to Function but takes two argument
+
+        BiFunction<String, String, String> concatFunction = (s1, s2) -> s1 + s2;
     }
 }
