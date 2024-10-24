@@ -3,9 +3,11 @@ package com.javalearning.streams;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.stream.Collectors;
@@ -29,6 +31,18 @@ public class StreamsApi {
         //limitLoop();
         //skip3ValueInLoop();
         //sort();
+        //sortByLengthAndAlphabet();
+        //flatMap();
+        //filterNull();
+        //debugging();
+        //findTheLongestString();
+        //allMatch();
+        //anyMatch();
+        //reduce();
+        //customStringJoining();
+        //filterOnMultipleCondition();
+        //longestWordFromSentence();
+        groupByFirstChar();
     }
 
     public static void iterateOverList() {
@@ -345,6 +359,282 @@ public class StreamsApi {
         Collections.sort(names, (a, b) -> Integer.compare(a.length(), b.length()));
         System.out.println(names);
 
+        //stream
+        List<String> result = names.stream()
+                .sorted(Comparator.comparingInt(String::length))
+                .toList();
+
+        System.out.println(result);
+
     }
 
+    public static void sortByLengthAndAlphabet() {
+        List<String> names = Arrays.asList("Mohit", "John", "Abhinave", "Jack", "Karan");
+
+       Collections.sort(names, (a, b) -> {
+           int lenCmp = Integer.compare(a.length(), b.length()); // -1, +1, 0
+           if(lenCmp != 0) return lenCmp; // sort based on length
+           return a.compareTo(b);
+       });
+
+        System.out.println(names);
+
+        //stream
+        List<String> result = names.stream()
+                .sorted(Comparator.comparingInt(String::length)
+                        .thenComparing(String::compareTo))
+                .toList();
+
+        System.out.println(result);
+    }
+
+    public static void flatMap() {
+        List<List<String>> listOfLists = Arrays.asList(
+                Arrays.asList("John", "Jane"),
+                Arrays.asList("Jack", "Jill")
+        );
+
+        List<String> name = new ArrayList<>();
+        for(List<String> list: listOfLists) {
+            name.addAll(list);
+        }
+
+        System.out.println(name);
+
+        //streams
+        List<String> result = listOfLists.stream()
+                .flatMap(List::stream)
+                .toList();
+        System.out.println(result);
+    }
+
+    public static void filterNull() {
+        List<String> names = Arrays.asList("Mohit", null, "John", "Abhinave", null, "Jack", "Karan");
+        List<String> nonNullNames = new ArrayList<>();
+
+        for(String name: names) {
+            if(name != null) {
+                nonNullNames.add(name);
+            }
+        }
+
+        System.out.println(nonNullNames);
+
+        //stream
+        List<String> result = names.stream()
+                .filter(Objects::nonNull)
+                .toList();
+
+        System.out.println(result);
+    }
+
+    public static void debugging() {
+        List<String> names = Arrays.asList("Mohit", "John", "Abhinave", "Jack", "Karan");
+
+        for(String name: names) {
+            System.out.println("Before transformation: " + name);
+            String upperCase = name.toUpperCase();
+            System.out.println("After transformation: " + upperCase);
+        }
+
+        List<String> result = names.stream()
+                .peek(name -> System.out.println("Before transformation: " + name))
+                .map(String::toUpperCase)
+                .peek(name -> System.out.println("After transformation: " + name))
+                .toList();
+
+        System.out.println(result);
+
+    }
+
+    public static void findTheLongestString() {
+        List<String> names = Arrays.asList("Mohit", "John", "Abhinave", "Jack", "Karan");
+        String longest = "";
+
+        for(String name: names) {
+            if(name.length() > longest.length()) {
+                longest = name; // Abhinave
+            }
+        }
+
+        System.out.println(longest);
+
+        Optional<String> result = names.stream()
+                .max(Comparator.comparingInt(String::length));
+
+        result.ifPresent(System.out::println);
+    }
+
+
+    // All Match
+    // Non Match
+    // Any Match
+
+
+    public static void allMatch() {
+        List<Integer> evenList = Arrays.asList(2, 4, 6, 8);
+
+        boolean allEven = true;
+        for(Integer value: evenList) {
+            if(value % 2 != 0) {
+                allEven = false;
+                break;
+            }
+        }
+
+        System.out.println(allEven);
+
+        //streams
+        boolean result = evenList.stream()
+                .allMatch(n -> n % 2 == 0);
+
+        System.out.println(result);
+    }
+
+    public static void anyMatch() {
+        List<Integer> evenList = Arrays.asList(2, 3, 5, 4, 6, 8);
+
+        boolean anyEven = false;
+        for(Integer value: evenList) {
+            if(value % 2 == 0) {
+                anyEven = true;
+                break;
+            }
+        }
+
+        System.out.println(anyEven);
+
+        //streams
+        boolean result = evenList.stream()
+                .anyMatch(n -> n % 2 == 0);
+
+        System.out.println(result);
+    }
+
+    public static void noneMatch() {
+        List<Integer> evenList = Arrays.asList(2, 4, 6, 8);
+
+        boolean nonOdd = false;
+        for(Integer value: evenList) {
+            if(value % 2 != 0) {
+                nonOdd = true;
+                break;
+            }
+        }
+
+        System.out.println(nonOdd);
+
+        //streams
+        boolean result = evenList.stream()
+                .noneMatch(n -> n % 2 != 0);
+
+        System.out.println(result);
+    }
+
+    public static void reduce() {
+        List<Integer> values = Arrays.asList(1, 4, 5, 7);
+        int product = 1;
+
+        for(Integer value: values) {
+            product *= value;
+        }
+
+        System.out.println(product);
+
+        //stream
+        Integer reduce = values.stream()
+                .reduce(1, (a, b) -> a * b);
+
+        System.out.println(reduce);
+    }
+
+    //[Mohit, Karan, Jhon]
+
+    public static void customStringJoining() {
+        List<String> names = Arrays.asList("Mohit", "John", "Abhinave", "Jack", "Karan");
+        StringBuilder result = new StringBuilder("[");
+        for(String name: names) {
+            if(result.length() > 1) {
+                result.append(", ");
+            }
+            result.append(name);
+        }
+        result.append("]");
+        System.out.println(result);
+
+        //stream
+        String resultString = names.stream()
+                .collect(Collectors.joining(", ", "[", "]"));
+        System.out.println(resultString);
+    }
+
+    public static void filterOnMultipleCondition() {
+        List<String> names = Arrays.asList("Mohit", "John", "Abhinave", "Jack", "Karan");
+        List<String> filterName = new ArrayList<>();
+
+        for(String name: names) {
+            if(name.length() < 5 && name.startsWith("J")) {
+                filterName.add(name);
+            }
+        }
+
+        System.out.println(filterName);
+
+        List<String> result = names.stream()
+                .filter(n -> n.length() < 5)
+                .filter(n -> n.startsWith("J"))
+                .toList();
+
+        System.out.println(result);
+
+        List<String> result1 = names.stream()
+                .filter(n -> n.length() < 5 && n.startsWith("J"))
+                .toList();
+
+        System.out.println(result1);
+    }
+
+    public static void longestWordFromSentence() {
+        String sentence = "Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.";
+        //[Deprecated, Gradle]
+        String longestWord = "";
+
+        for(String word: sentence.split(" ")) {
+            if(word.length() > longestWord.length()) {
+                longestWord = word;
+            }
+        }
+
+        System.out.println(longestWord);
+
+        // streams
+        String result = Arrays.stream(sentence.split(" "))
+                .max(Comparator.comparingInt(String::length))
+                .orElse("Not Found");
+
+        System.out.println(result);
+    }
+
+    public static void groupByFirstChar() {
+        List<String> names = Arrays.asList("Mohit", "John", "Abhinave", "Jack", "Karan");
+        Map<Character, List<String>> groupByFirstLetter = new HashMap<>();
+
+        /**
+         * M -> [Mohit]
+         * J -> [John, Jack]
+         * A -> [Abhinave]
+         */
+        for(String name: names) {
+            char c = name.charAt(0);
+            groupByFirstLetter.putIfAbsent(c, new ArrayList<>());
+            groupByFirstLetter.get(c).add(name);
+        }
+
+        System.out.println(groupByFirstLetter);
+
+        Map<Character, List<String>> result = names.stream()
+                .collect(Collectors.groupingBy(name -> name.charAt(0)));
+
+        System.out.println(result);
+    }
 }

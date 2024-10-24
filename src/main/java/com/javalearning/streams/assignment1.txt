@@ -1,0 +1,21 @@
+Assignment 1: E-commerce Data Processing
+Scenario:
+You are part of a development team for an e-commerce platform, and you need to analyze the sales data of a product catalog.
+
+Task 1: You are given a list of products sold, each with a price. Some of the prices are null due to data errors.
+Clean the data by filtering out the null values and collecting the valid prices into a list.
+Task 2: Find the most expensive product sold.
+Task 3: Find the total revenue generated from products priced over $50.
+Task 4: Get a list of unique product categories from the product list.
+Task 5: Group products by their category and find the average price for each category.
+
+
+Assignment 2: Movie Streaming Platform Analytics
+Scenario:
+You work for a movie streaming platform, and you need to provide insights on user activity and content popularity.
+
+Task 1: Given a list of movie titles, some titles are duplicates (movies watched multiple times). Create a list of distinct movies.
+Task 2: Count how many movies are longer than 2 hours.
+Task 3: Extract all movies that have titles starting with the letter 'A' or 'T', limit the results to the first 5.
+Task 4: Find the most watched movie (with the highest number of views).
+Task 5: Group the movies by genre and find the total number of movies in each genre.
