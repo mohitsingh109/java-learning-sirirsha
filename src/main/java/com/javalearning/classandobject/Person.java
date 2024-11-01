@@ -75,15 +75,15 @@ public class Person {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) { // o = personB this=personA
-        if (this == o) return true; // if(personA.equals(personA))
-        if (!(o instanceof Person person)) return false; //if(personA.equals(new Calculator())) {
-
-        if (!getName().equals(person.getName())) return false;
-        if (!getAddress().equals(person.getAddress())) return false;
-        if (!getEmail().equals(person.getEmail())) return false;
-        if (!getPhoneNumber().equals(person.getPhoneNumber())) return false;
-        return getCardNo().equals(person.getCardNo());
-    }
+//    @Override
+//    public boolean equals(Object o) { // o = personB this=personA
+//        if (this == o) return true; // if(personA.equals(personA))
+//        if (!(o instanceof Person person)) return false; //if(personA.equals(new Calculator())) {
+//
+//        if (!getName().equals(person.getName())) return false;
+//        if (!getAddress().equals(person.getAddress())) return false;
+//        if (!getEmail().equals(person.getEmail())) return false;
+//        if (!getPhoneNumber().equals(person.getPhoneNumber())) return false;
+//        return getCardNo().equals(person.getCardNo());
+//    }
 }

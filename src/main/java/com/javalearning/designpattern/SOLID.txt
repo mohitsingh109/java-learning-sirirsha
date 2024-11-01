@@ -1,0 +1,11 @@
+SOLID
+
+S - Single Responsibility Principal
+
+O - Open/Closed Principal
+
+L - Liskov Subsitutuion principal
+
+I - Interface Segregation Principal
+
+D - Dependency Inversion Principal

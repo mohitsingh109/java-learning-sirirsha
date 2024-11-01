@@ -47,15 +47,6 @@ public class Product {
         this.category = category;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", category='" + category + '\'' +
-                '}';
-    }
-
     public static void main(String[] args) {
         List<Product> products = Arrays.asList(
                 new Product("Laptop", 1200.0, "Electronics"),

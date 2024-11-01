@@ -9,9 +9,9 @@ public class App {
             System.out.println("test is empty");
         }
 
-        if(test.isBlank()) {//"" "    "
-            System.out.println("test is Blank");
-        }
+//        if(test.isBlank()) {//"" "    "
+//            System.out.println("test is Blank");
+//        }
 
         String trim = test.trim();
         System.out.println(trim);

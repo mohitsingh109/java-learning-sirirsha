@@ -1,0 +1,19 @@
+1. difference between == or equals()?
+
+2. HashMap VS Hashtable?
+
+3. explain final, finally, finalize()?
+
+4. checked bs unchecked exception?
+
+5. ArrayList vs LinkedList
+
+6. default method in interface // Java 9
+
+7. Optional In Java?
+
+8. How to make a class Immutable?
+
+9. Marker Interface (No method inside the interface)
+
+10. double locking... (explain with singleton pattern using lazy loading)
