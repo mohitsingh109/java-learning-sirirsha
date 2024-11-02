@@ -1,11 +1,16 @@
 Creation Design pattern
-
 1) Singleton Pattern
 2) Factory Design Pattern
 3) Builder Pattern
-//...
 
 Structure Design pattern
-
 1) Decorator Pattern
 2) Facade Pattern
+3) Adapter Pattern
+4) Bride Pattern
+
+Behaviour Design pattern
+1) Chain of responsibility
+2) Strategy Pattern
+3) Observer pattern
+4) Template pattern (HTML/Web template)
