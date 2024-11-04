@@ -13,4 +13,4 @@ Behaviour Design pattern
 1) Chain of responsibility
 2) Strategy Pattern
 3) Observer pattern
-4) Template pattern (HTML/Web template)
+4) Template pattern

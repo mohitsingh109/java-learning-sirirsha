@@ -12,7 +12,6 @@ public class Main {
         basicTvRemote.setVolume(40);
 
         //Radio with basic remote
-
         Remote basicRadioRemote = new BasicRemote(radio);
         basicRadioRemote.power();
         basicRadioRemote.setVolume(34);
